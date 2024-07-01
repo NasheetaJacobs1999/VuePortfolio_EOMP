@@ -34,6 +34,14 @@ export default {
     Projects,
     Testimonials,
     Contact
+  },
+  computed: {
+       getAbout(){
+            return this.$store.dispatch("getAbout")
+        }
+  },
+  mounted(){
+    this.getAbout
   }
 }
 </script>
