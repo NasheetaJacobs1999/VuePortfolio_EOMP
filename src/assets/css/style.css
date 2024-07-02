@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+/* Portfolio Body */
+body {
+  padding-top: 50px;
+}
+.gradient-custom {
+    /* fallback for old browsers /
+    background: #6a11cb;
+    
+    / Chrome 10-25, Safari 5.1-6 /
+    background: -webkit-linear-gradient(to right, rgba(186, 205, 146, 1), rgba(117, 164, 127, 1));
+    
+    / W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(186, 205, 146, 1), rgba(117, 164, 127, 1));
+  }
+  
+  /* Nav bar */
+   .logo {
+    width: 100px;
+    height: 70px;
+  } 
+  .nav-item {
+    transition: all .5s;
+    &:hover {
+      transform: scale(1.2);
+      text-decoration: underline;
+    }
+  }
+  
+  /* Main section detailing */
+  main{
+    background-image: black;
+  }
+  section {
+    scroll-margin-top: 4rem;
+  }
+  section:nth-child(even){
+    background-image: linear-gradient(to right, #3B683A, #D4E7C5);
+  }
+  section:nth-child(odd){
+    background-image: linear-gradient(to left, #3B683A, #D4E7C5);
+  }
+  h3 {
+    padding-top: 2%;
+}
+.sectHeader {
+  color: #3B683A;
+} 
