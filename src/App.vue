@@ -1,50 +1,50 @@
 <template>
-  <div id="app">
-    <Navbar />
-    <main>
-      <Home />
-      <About />
-      <Resume />
-      <Projects />
-      <Testimonials />
-      <Contact />
-    </main>
-    <Footer />
-  </div>
+  <Navbar/>
+  <Spinner/>
+  <router-view/>
+  <Footer/>
 </template>
 
 <script>
-import Navbar from '@/components/NavBar'
-import Footer from './components/Footer.vue'
-import Home from './views/HomeView.vue'
-import About from './views/AboutView.vue'
-import Resume from './views/ResumeView.vue'
-import Projects from './views/ProjectsView.vue'
-import Testimonials from './views/TestimonialsView.vue'
-import Contact from './views/ContactView.vue'
+import Navbar from "@/components/NavBar"
+import Footer from "@/components/FooterComp.vue"
+import Spinner from "./components/SpinnerComp.vue"
 
 export default {
-  name: 'App',
   components: {
-    Navbar,
-    Footer,
-    Home,
-    About,
-    Resume,
-    Projects,
-    Testimonials,
-    Contact
-  },
-  computed: {
-       getAbout(){
-            return this.$store.dispatch("getAbout")
-        }
-  },
-  mounted(){
-    this.getAbout
+    Navbar, Footer, Spinner
   }
 }
 </script>
 
 <style>
+#app {
+  font-family: 'Titillium Web', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #F6F4EB;
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #e0d8ae;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #09101a;
+}
+
+nav a.router-link-exact-active {
+  color: #09101a;
+}
+
+Footer {
+  width: 100%;
+}
+
 </style>
