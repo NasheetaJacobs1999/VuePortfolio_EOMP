@@ -32,12 +32,20 @@ export default createStore({
       state.aboutMe = value
     }
   },
-
+  
   actions: {
     async getAboutMe(context){
       await axios.get(dataUrl)
       .then (res => {
         context.commit('setAboutMe', res.data.aboutMe)
+        
+      })
+    },
+    async getTestimonials(context){
+      await axios.get(dataUrl)
+      .then (res => {
+        context.commit('setTestimonials', res.data.records.testimonials)
+        
       })
     },
     async fetchSkills(context) {
@@ -47,10 +55,10 @@ export default createStore({
         if (skills) {
           context.commit("setSkills", skills);
         } else {
-          context.commit("setMessage", "No skills");
+          // Make use of sweetalert 2 -> Swal
         }
       } catch (e) {
-        context.commit("setMessage", "An error occurred.");
+        // context.commit("setMessage", "An error occurred.");
       }
     },
     async fetchEducation(context) {
@@ -60,10 +68,10 @@ export default createStore({
         if (education) {
           context.commit("setEducation", education);
         } else {
-          context.commit("setMessage", "No education");
+          // context.commit("setMessage", "No education");
         }
       } catch (e) {
-        context.commit("setMessage", "An error occurred.");
+        // context.commit("setMessage", "An error occurred.");
       }
     },
     async fetchExperience(context) {
@@ -73,10 +81,10 @@ export default createStore({
         if (experience) {
           context.commit("setExperience", experience);
         } else {
-          context.commit("setMessage", "No experience");
+          // context.commit("setMessage", "No experience");
         }
       } catch (e) {
-        context.commit("setMessage", "An error occurred.");
+        // context.commit("setMessage", "An error occurred.");
       }
     },
     async fetchProjects(context) {
@@ -86,23 +94,10 @@ export default createStore({
         if (projects) {
           context.commit("setProjects", projects);
         } else {
-          context.commit("setMessage", "No projects");
+          // context.commit("setMessage", "No projects");
         }
       } catch (e) {
-        context.commit("setMessage", "An error occurred.");
-      }
-    },
-    async fetchTestimonials(context) {
-      try {
-        let res = await fetch(dataUrl);
-        let { testimonials } = await res.json();
-        if (testimonials) {
-          context.commit("setTestimonials", testimonials);
-        } else {
-          context.commit("setMessage", "No testimonials");
-        }
-      } catch (e) {
-        context.commit("setMessage", "An error occurred.");
+        // context.commit("setMessage", "An error occurred.");
       }
     },
   },

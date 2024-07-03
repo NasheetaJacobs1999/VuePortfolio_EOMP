@@ -1,17 +1,17 @@
 <template>
   <section id="testimonial" class="testimonial">
-    <div class="container mt-5">
-      <div class="row">
+    <div class="container mt-5 text-center">
+      <div class="row justify-content-center align-items-start vh-100 testimonial-content">
         <div class="col">
-          <div class="card mb-3" v-for="item in testimonials" :key="item.ID" data-aos="fade-right">
+          <div class="card mb-3" v-for="item in testimonials" :key="item.ID">
             <div class="row g-0">
               <div class="col-md-4 colI line">
-                <img :src="item.Image" class="img-fluid" :alt="item.Name" />
+                <img :src="item.Image" class="img-fluid testImage" :alt="item.Name" />
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title">{{ item.Name }}</h5>
-                  <p class="card-text">
+                  <h3 class="card-title">{{ item.Name }}</h3>
+                  <p class="card-text test">
                    "{{ item.Content }}"
                   </p>
                 </div>
@@ -28,51 +28,30 @@
 export default {
   computed: {
     testimonials() {
-      return this.$store.state.testimonials;
-    },
+      return this.$store.state.testimonials
+    }
   },
   mounted() {
-    this.$store.dispatch("fetchTestimonials");
+    this.$store.dispatch("getTestimonials")
   },
 };
 </script>
 
 <style scoped>
-.colI {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 18rem;
+.test {
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  background-color: rgba(186, 205, 146, 1);
+  padding: 10px;
 }
-
-.line {
-  border-right: 1px solid #84a7a1;
+.testImage {
+  width: 10rem;
+  border-radius: 100%;
+  padding-bottom: 10%;
 }
-
-.card {
-  background-color: #141c27;
-  color: #84a7a1;
-}
-
-.card:hover {
-  transform: scale(1.01);
-  transition: ease-out 0.2s;
-}
-
-img {
-  height: 14rem;
-  border-radius: 1rem;
-}
-
-.card-title {
-  text-decoration: underline;
-}
-
-.card-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10rem;
+.testimonial-content{
+  margin-top: 4rem;
 }
 
 @media (max-width: 1000px) {
