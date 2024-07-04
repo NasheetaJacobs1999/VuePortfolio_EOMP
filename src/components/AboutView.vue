@@ -1,6 +1,7 @@
 <template>
   <section id="about" class="about">
-    <div class="container pt-5" v-for="value in $store.state.aboutMe" :key="value">
+    <h3 class="sectHeader"></h3>
+    <div class="container" v-for="value in $store.state.aboutMe" :key="value">
       <div class="container" data-aos="fade-right" >
         <div class="row mt-3">
           <div class="col">
@@ -70,6 +71,8 @@ export default {
 <style scoped>
 .about {
   min-height: 85vh;
+  padding: 2rem;
+  padding-top: 3rem;
 }
 .colI {
   display: flex;
@@ -78,8 +81,8 @@ export default {
 }
 
 .card {
-  background-color: #141c27;
-  color: #84a7a1;
+  background-color: whitesmoke;
+  color: #09101a;
   border-radius: 2rem;
 }
 
@@ -103,7 +106,7 @@ img {
 .card-title {
   text-decoration: underline;
   font-size: 2rem;
-  height: 3.5rem;
+  height: 1rem;
 }
 
 .card-text {

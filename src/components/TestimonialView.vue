@@ -2,6 +2,7 @@
   <section id="testimonial" class="testimonial">
     <div class="container mt-5 text-center">
       <div class="row justify-content-center align-items-start vh-100 testimonial-content">
+          <h3 class="sectHeader">Testimonials</h3>
         <div class="col">
           <div class="card mb-3" v-for="item in testimonials" :key="item.ID">
             <div class="row g-0">
@@ -49,9 +50,6 @@ export default {
   width: 10rem;
   border-radius: 100%;
   padding-bottom: 10%;
-}
-.testimonial-content{
-  margin-top: 4rem;
 }
 
 @media (max-width: 1000px) {
