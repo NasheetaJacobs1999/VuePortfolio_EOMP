@@ -38,7 +38,8 @@ export default {};
 
 <style scoped>
 .home {
-  height: 90vh;
+  height: 100vh;
+  padding-top:80px;
 }
 
 img {

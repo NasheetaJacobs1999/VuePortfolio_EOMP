@@ -1,14 +1,15 @@
 <template>
-  <section id="projects" class="projects" v-if="$store.state.projects.length > 0" >
+  <section id="projects" class="projects">
     <div class="container" >
+      <h3 class="sectHeader mt-5 mb-5 text-center">Projects</h3>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
         <div
           class="col g-4 mb-4"
           v-for="item in projects"
-          :key="item.ID"
+          :key="item"
           data-aos="fade-up"
         >
-          <div class="card">
+          <div class="card" v-if="$store.state.projects.length > 0">
             <div class="image mb-2">
               <img
                 :src="item.Image"
@@ -19,27 +20,28 @@
             </div>
             <div class="line"></div>
             <div class="card-body">
-              <h5 class="card-title text-center">{{ item.Title }}</h5>
+              <h5 class="card-title text-center">{{item.Title}}</h5>
               <p class="card-text">
                 {{ item.Description }}
               </p>
               <div class="links">
-                <a :href="item.GitHub" class="card-link" target="_blank"
+                <a :href="item.Github" class="card-link" target="_blank"
                   ><button>GitHub</button></a
                 >
-                <a :href="item.Netlify" class="card-link" target="_blank"
+                <a :href="item.Vercel" class="card-link" target="_blank"
                   ><button>Live Server</button></a
                 >
               </div>
             </div>
           </div>
+            <div v-else>
+    <Spinner/>
+  </div>
         </div>
       </div>
     </div>
   </section>
-    <section v-else>
-    <Spinner/>
-  </section>
+  
 </template>
 <script>
   import Spinner from "@/components/SpinnerComp.vue"
@@ -53,7 +55,7 @@ export default {
     },
   },
   mounted() {
-    this.$store.dispatch("fetchProjects");
+    this.$store.dispatch("getProjects");
   },
 };
 </script>
@@ -72,8 +74,8 @@ export default {
 }
 
 .card {
-  background-color: #141c27;
-  color: #84a7a1;
+  background-color: whitesmoke;
+  color: #0a0d12;
   width: 23rem;
   height: 25rem;
   border-radius: 1.5rem;

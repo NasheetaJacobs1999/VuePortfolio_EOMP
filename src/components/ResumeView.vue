@@ -3,10 +3,10 @@
     <div class="container mt-5">
       <div class="container">
         <div class="row rowF">
-          <div class="first" data-aos="fade-right" data-aos-duration="1000" v-if="education">
+          <div class="first" data-aos="fade-right" data-aos-duration="1000" v-if="$store.state.education.length > 0">
             <div class="col colE">
               <h4 class="mb-3 mx-4">EDUCATION</h4>
-              <ul v-for="item in e" :key="item.ID">
+              <ul v-for="item in education" :key="item.ID">
                 <li class="bullet">
                   {{ item.title }}
                 </li>
@@ -46,9 +46,8 @@
             >
               <div class="col mb-4" v-for="item in skills" :key="item.ID">
                 <i :class="item.icon" style="color: #84a7a1; font-size: 8rem;"></i>
-                <p>
-                  {{ item.title }}
-                </p>
+                <img :src="item.skill" alt="" srcset="" class="skills">
+               
               </div>
             </div>
             <div class="row rowS" v-else>
@@ -81,9 +80,9 @@ export default {
     },
   },
   mounted() {
-    this.$store.dispatch("fetchEducation");
-    this.$store.dispatch("fetchExperience");
-    this.$store.dispatch("fetchSkills");
+    this.$store.dispatch("getEducation");
+    this.$store.dispatch("getExperience");
+    this.$store.dispatch("getSkills");
   },
 };
 </script>
@@ -91,6 +90,9 @@ export default {
 <style scoped>
 .resume {
   height: 100vh;
+}
+.skills{
+  width: 150px ;
 }
 .colE {
   display: flex;
