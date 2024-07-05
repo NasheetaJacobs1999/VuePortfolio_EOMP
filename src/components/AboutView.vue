@@ -2,7 +2,7 @@
   <section id="about" class="about">
     <h3 class="sectHeader"></h3>
     <div class="container" v-for="value in $store.state.aboutMe" :key="value">
-      <div class="container" data-aos="fade-right" >
+      <div class="container aboutCard" data-aos="fade-right" >
         <div class="row mt-3">
           <div class="col">
             <div class="card mb-3">
@@ -137,15 +137,7 @@ button:hover {
   display: flex;
 }
 
-@media (max-width: 1000px) {
-  button {
-    padding: 0.5rem;
-    font-size: 0.8rem;
-    margin-bottom: 1rem;
-    width: 10rem;
-  }
-
-  .card-title {
+.card-title {
   text-decoration: underline;
   font-size: 2rem;
   height: 4rem;
@@ -159,6 +151,13 @@ button:hover {
   line-height: 2rem;
 }
 
+  @media (max-width: 1000px) {
+    button {
+      padding: 0.5rem;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+      width: 10rem;
+    }
 }
 
 @media (max-width: 768px) {

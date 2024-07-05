@@ -10,8 +10,8 @@
 export default {
    data() {
       return {
-        loader: true, // Initially set loading to true
-        data: [], // Your data array
+        loader: true,
+        data: [],
       };
     },
     mounted() {
