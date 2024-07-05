@@ -1,10 +1,10 @@
 <template>
   <section id="testimonial" class="testimonial">
     <div class="container mt-5 text-center">
-      <div class="row justify-content-center align-items-start vh-100 testimonial-content">
-          <h3 class="sectHeader">Testimonials</h3>
-        <div class="col">
-          <div class="card mb-3" v-for="item in testimonials" :key="item.ID">
+      <h3 class="sectHeader">Testimonials</h3>
+      <div class="row justify-content-center align-items-start testimonial-content">
+        <div class="col-lg-6 col-md-6 col-sm-12 mb-3" v-for="item in testimonials" :key="item.ID">
+          <div class="card">
             <div class="row g-0">
               <div class="col-md-4 colI line">
                 <img :src="item.Image" class="img-fluid testImage" :alt="item.Name" />
@@ -13,7 +13,7 @@
                 <div class="card-body">
                   <h3 class="card-title">{{ item.Name }}</h3>
                   <p class="card-text test">
-                   "{{ item.Content }}"
+                    "{{ item.Content }}"
                   </p>
                 </div>
               </div>
@@ -50,6 +50,10 @@ export default {
   width: 10rem;
   border-radius: 100%;
   padding-bottom: 10%;
+  padding-top: 30%;
+}
+.card {
+  height: 20rem;
 }
 
 @media (max-width: 1000px) {
@@ -81,6 +85,11 @@ export default {
   .card:hover {
     transform: none;
     transition: none;
+  }
+}
+@media (max-width: 1295px) {
+  .card {
+    height: 20%;
   }
 }
 </style>

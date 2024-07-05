@@ -12,8 +12,7 @@
     </div>
     <div class="text">
       <p>
-        Gmail: nasheetahjacobs@gmail.com <br />
-        Copyright &copy; 2024
+        Nasheeta Jacobs &copy; 2024
       </p>
     </div>
   </footer>
@@ -38,7 +37,6 @@ footer {
   align-items: center;
   flex-direction: column;
 }
-
 .text {
   text-align: center;
 }

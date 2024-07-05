@@ -65,14 +65,14 @@
         
           </div>
           <div class="contDetails justify-content-around text-center">
-            <a href="mailto:nasheetahjacobs@gmail.com" class=" my-3 mail" mail>
+            <a href="mailto:nasheetahjacobs@gmail.com" class="mail-link">
               <i class="fa-solid fa-envelope"></i>
-              nasheetahjacobs@gmail.com
+                nasheetahjacobs@gmail.com
             </a>
-            <text class="my-3 mx-5">
+            <a href="tel:+27635856284" class="phone-link">
               <i class="fa-solid fa-phone"></i>
-              +27 63 585 6284
-            </text>
+                +27 63 585 6284
+            </a>
           </div>
         </section>
 </template>
@@ -166,6 +166,25 @@ export default {};
 .mail{
   text-decoration: none;
   color: black;
+}
+.phone-link {
+  color: black;
+  text-decoration: none;
+}
+
+.phone-link:hover {
+  text-decoration: underline;
+  color: blue;
+}
+
+.mail-link {
+  color: black;
+  text-decoration: none;
+}
+
+.mail-link:hover {
+  text-decoration: underline;
+  color: blue;
 }
 
 @media (max-width: 1000px) {
