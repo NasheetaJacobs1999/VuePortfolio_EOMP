@@ -1,5 +1,5 @@
 <template>
-  <section id="testimonial" class="testimonial">
+   <section id="testimonial" class="testimonial">
     <div class="container mt-5 text-center">
       <h3 class="sectHeader">Testimonials</h3>
       <div class="row justify-content-center align-items-start testimonial-content">
@@ -56,6 +56,7 @@ export default {
   height: 20rem;
 }
 
+
 @media (max-width: 1000px) {
   .card-text {
     height: max-content;
@@ -90,6 +91,6 @@ export default {
 @media (max-width: 1295px) {
   .card {
     height: 20%;
-  }
+}
 }
 </style>

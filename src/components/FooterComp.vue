@@ -1,6 +1,6 @@
 <template>
-  <footer>
-    <div class="icons">
+  <footer class="gradient-custom">
+    <!-- <div class="icons">
       <a
         href="https://www.linkedin.com/in/nasheeta-jacobs-2b2196269/"
         target="_blank"
@@ -9,7 +9,7 @@
       <a href="https://github.com/NasheetaJacobs1999" target="_blank"
         ><i class="fa-brands fa-square-github fa-2xl" style="color: #84a7a1"></i
       ></a>
-    </div>
+    </div> -->
     <div class="text">
       <p>
         Nasheeta Jacobs &copy; 2024
@@ -23,15 +23,15 @@ export default {};
 </script>
 
 <style scoped>
-i {
+/* i {
   padding: 0.7rem;
   margin-top: 1rem;
   margin-bottom: 0.4rem;
-}
+} */
 
 footer {
   width: 100%;
-  background-color: #141c27;
+  height: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,5 +39,6 @@ footer {
 }
 .text {
   text-align: center;
+  color: black;
 }
 </style>
