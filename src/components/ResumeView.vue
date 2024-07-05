@@ -21,19 +21,25 @@
             </div>
             <div class="col colE">
               <h4 class="mb-3 mx-4">Experience</h4>
-              <ul v-for="item in experience" :key="item.ID">
-                <li class="bullet">
-                  {{ item.title }}
-                </li>
-                <li class="none">
-                  {{ item.year }}
-                </li>
-                <li class="none">
-                  {{ item.description }}
-                </li>
-                <li class="lis"><div class="line"></div></li>
-              </ul>
+              <div class="accordion mx-auto" id="accordionExample">
+                <div class="accordion-item" v-for="item in experience" :key="item.ID">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" :data-bs-toggle="'collapse'" :data-bs-target="'#collapse' + item.ID" :aria-expanded="item.ID === 1 ? 'true' : 'false'" :aria-controls="'collapse' + item.ID">
+                      {{ item.company }}
+                    </button>
+                  </h2>
+                  <div :id="'collapse' + item.ID" class="accordion-collapse collapse" :class="{ 'show': item.ID === 1 }" aria-labelledby="'heading' + item.ID" data-bs-parent="#accordionExample">
+                    <div class="accordion-body text-start">
+                      <h6>{{ item.title }}</h6>
+                      <ul>
+                        <li>{{ item.description }}</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+
           </div>
           <div class="col colSpinner" v-else>
             <Spinner />
@@ -45,7 +51,7 @@
               v-if="skills"
             >
               <div class="col mb-4" v-for="item in skills" :key="item.ID">
-                <i :class="item.icon" style="color: #84a7a1; font-size: 8rem;"></i>
+                <i :class="item.icon" style="color: #84a7a1; font-size: 7rem;"></i>
                 <img :src="item.skill" alt="" srcset="" class="skills">
                
               </div>
@@ -122,7 +128,7 @@ h4 {
   margin-top: 2.5rem;
   text-decoration: underline;
   float: left;
-  color: #64ffda;
+  color: black;
 }
 
 .lis {

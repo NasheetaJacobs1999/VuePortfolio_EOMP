@@ -24,7 +24,7 @@
                     <p class="card-text">{{value.info}}</p>
                     <div class="links">
                       <a
-                        href=""
+                        href="https://drive.google.com/file/d/1pQ3taKL7hkTF-c38CbvXbVUfp69_S4nK/view?usp=drive_link"
                         target="_blank"
                         ><button class="btn1">
                           <i
