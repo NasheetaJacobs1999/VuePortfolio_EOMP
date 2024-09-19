@@ -36,9 +36,10 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: #000000;
 }
 .text {
   text-align: center;
-  color: black;
+  color: white;
 }
 </style>

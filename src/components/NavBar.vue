@@ -21,22 +21,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <router-link to="/" class="nav-link text-black">Home</router-link>
+                <router-link to="/" class="nav-link text-white">Home</router-link>
             </li>
             <li class="nav-item">
-                <router-link to="/about" class="nav-link text-black">About</router-link>
+                <router-link to="/about" class="nav-link text-white">About</router-link>
             </li>
             <li class="nav-item">
-                <router-link to="/resume" class="nav-link text-black">Resume</router-link>
+                <router-link to="/resume" class="nav-link text-white">Education&Experience</router-link>
             </li>
             <li class="nav-item">
-                <router-link to="/project" class="nav-link text-black">Projects</router-link>
+                <router-link to="/project" class="nav-link text-white">Projects</router-link>
             </li>
             <li class="nav-item">
-                <router-link to="/testimonial" class="nav-link text-black">Testimonials</router-link>
-            </li>
-            <li class="nav-item">
-                <router-link to="/contact" class="nav-link text-black">Contact</router-link>
+                <router-link to="/contact" class="nav-link text-white">Contact</router-link>
             </li>
           </ul>
         </div>
@@ -57,7 +54,7 @@ export default {};
 
 }
 .navbar {
-    background-color: #141c27;
+    background-color: #000000;
 }
 
 li {
@@ -65,7 +62,7 @@ li {
 }
 
 button {
-    background-color: #84a7a1;
+    background-color: #a78484;
 }
 
 @media (max-width: 992px) {

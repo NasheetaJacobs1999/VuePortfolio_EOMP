@@ -16,7 +16,6 @@
                 <li class="none">
                   {{ item.description }}
                 </li>
-                <li class="lis"><div class="line"></div></li>
               </ul>
             </div>
             <div class="col colE">
@@ -40,27 +39,33 @@
               </div>
             </div>
 
+            <div class="links">
+              <a
+                href="https://drive.google.com/file/d/1pQ3taKL7hkTF-c38CbvXbVUfp69_S4nK/view?usp=drive_link"
+                target="_blank"
+              >
+                <button class="btn btn-primary">
+                  <i
+                    class="fa-solid fa-file-pdf fa-2xl"
+                    style="color: #ffffff"
+                  ></i>
+                  View My CV
+                </button>
+              </a>
+              <router-link to="/project">
+                <button class="btn btn-primary">
+                  <i
+                    class="fa-solid fa-paper-plane fa-2xl"
+                    style="color: #ffffff"
+                  ></i>
+                  View My Projects
+                </button>
+              </router-link>
+            </div>
+
           </div>
           <div class="col colSpinner" v-else>
             <Spinner />
-          </div>
-          <div class="second" data-aos="fade-left" data-aos-duration="1000">
-            <h4 class="text-center mb-3">SKILLS</h4>
-            <div
-              class="row rowS row-cols-1 row-cols-sm-2 row-cols-lg-3 mt-2"
-              v-if="skills"
-            >
-              <div class="col mb-4" v-for="item in skills" :key="item.ID">
-                <i :class="item.icon" style="color: #84a7a1; font-size: 7rem;"></i>
-                <img :src="item.skill" alt="" srcset="" class="skills">
-               
-              </div>
-            </div>
-            <div class="row rowS" v-else>
-              <div class="col">
-                <Spinner />
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -81,168 +86,180 @@ export default {
     experience() {
       return this.$store.state.experience;
     },
-    skills() {
-      return this.$store.state.skills;
-    },
   },
   mounted() {
     this.$store.dispatch("getEducation");
     this.$store.dispatch("getExperience");
-    this.$store.dispatch("getSkills");
   },
 };
 </script>
 
 <style scoped>
 .resume {
-  height: 100vh;
+  padding-top: 5rem;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
 }
-.skills{
-  width: 150px ;
-}
+
 .colE {
   display: flex;
   flex-direction: column;
+  padding: 1.5rem;
+  background-color: whitesmoke;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
 }
 
 .colSpinner {
-  height: 28vh;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.first {
-  width: 40%;
-  border-right: 1px solid #84a7a1;
-}
-
-.second {
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-}
-
 h4 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  position: relative;
+}
+
+h4::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background-color: #099a5b;
+  left: 0;
+  bottom: -5px;
+}
+
+.lis .line {
+  width: 100%;
+  border-bottom: 2px solid #eeeeee;
   margin-top: 2.5rem;
-  text-decoration: underline;
-  float: left;
-  color: black;
-}
-
-.lis {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  width: 80%;
-}
-
-ul {
-  list-style: none;
 }
 
 .bullet::before {
   content: "\2022";
-  padding: 0.3rem;
-  width: 1em;
-  margin-left: -1em;
-  color: #64ffda;
+  color: #099a5b;
+  font-size: 1.2rem;
+  margin-right: 0.75rem;
 }
 
-.line {
-  width: 100%;
-  border-bottom: 2px solid #84a7a1;
-  margin-top: 2.5rem;
-}
-.desc {
-  float: left;
+ul {
+  padding-left: 0;
+  margin-top: 0.5rem;
 }
 
-.none {
-  list-style: none;
+ul li {
+  font-size: 1rem;
+  color: #000000;
 }
 
-.rowF {
-  display: flex;
-  flex-direction: row;
+.accordion-item {
+  background: #fff;
+  border: none;
+  margin-bottom: 0.75rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
-.rowS {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+
+.accordion-button {
+  font-size: 1.1rem;
+  font-weight: 500;
+  background-color: transparent;
+  color: #000000;
+  border: none;
+  box-shadow: none;
+}
+
+.accordion-body {
+  background-color: #fafafa;
+  padding: 1rem;
+  font-size: 1rem;
+  color: #000000;
 }
 
 .description {
   display: block;
-  height: 70px;
-  overflow: auto;
-}
-
-::-webkit-scrollbar {
-  width: 1px;
-  height: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #84a7a1;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.2);
+  height: auto;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
 }
 
 .mastery {
-  font-size: 0.9rem;
-  margin-top: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000000;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #099a5b;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eeeeee;
 }
 
 @media (max-width: 1200px) {
   .resume {
-    height: max-content;
-  }
-}
-@media (max-width: 1000px) {
-  .resume {
-    height: max-content;
-  }
-
-  .row {
-    display: flex;
-    justify-content: center;
-  }
-
-  .first {
-    width: 40%;
-  }
-
-  .second {
-    width: 60%;
-    height: max-content;
-  }
-}
-@media (max-width: 768px) {
-
-  .first {
-    width: 100%;
-    height: max-content;
-    border: none;
-  }
-
-  .rowS {
-    flex-wrap: wrap;
-  }
-
-  .second {
-    width: 100%;
-    height: max-content;
+    padding-top: 3rem;
   }
 
   .colE {
-    height: max-content;
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 1.5rem;
   }
 }
+
+@media (max-width: 768px) {
+  .rowF {
+    flex-direction: column;
+  }
+
+  .colE {
+    width: 100%;
+  }
+
+  .accordion-button {
+    font-size: 1rem;
+  }
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-primary {
+  background-color: #099a5b;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #097c54;
+}
+
+.links {
+  text-align: center;
+}
+
+.links button {
+  margin: 10px;
+}
+
 </style>

@@ -1,14 +1,11 @@
 <template>
   <section id="home" class="home">
+    <video autoplay loop muted playsinline>
+            <source src="https://nasheetajacobs1999.github.io/allimages/videos/3141207-uhd_3840_2160_25fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
     <div class="container-fluid mt-md-0">
       <div class="row">
-        <div class="col d-flex" data-aos="zoom-in" data-aos-duration="1000">
-          <img
-            src="https://nasheetajacobs1999.github.io/allimages/images/Home.jpg"
-            alt="Nasheeta Jacobs"
-            loading="lazy"
-          />
-        </div>
         <div class="col colT" data-aos="zoom-in-right">
           <div class="text1">
             <p class="text2 me">
@@ -40,10 +37,21 @@ export default {};
 .home {
   height: 100vh;
   padding-top:80px;
+  position: relative;
+}
+
+.home video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; 
 }
 
 img {
-  background-color: #141c27;
+  background-color: #9c9fa3;
   border-radius: 50rem 20rem;
   width: 17rem;
   border-radius: 50px;
@@ -68,7 +76,7 @@ img {
   padding-inline: 0.4rem;
   font-size: 3rem;
   font-weight: bolder;
-  color: #0a0d12;
+  color: #ffffff;
 }
 
 .btnC {
@@ -83,16 +91,15 @@ img {
   background-color: #0a0d12;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
   transition: 0.2s;
-  color: #3B683A;
+  color: #099a5b;
   transform: scale(1.1);
 }
 
 .subT {
   text-align: center;
   font-size: 2rem;
-  background: linear-gradient(to bottom, black , #3B683A);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /* background: #0a0d12; */
+  color: #099a5b;
 }
 
 .text1 {
